@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <title>To-Do App</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="todo-app">
+        <h2>To-Do List <img src="images/icon.png"></h2>
+        <div class="row">
+            <input type="text" id="input-box" placeholder="Add your text">
+            <button onclick="addTask()">Add</button>
+        </div>
+        <ul id="list-container">
+
+        </ul>
+    </div>
+    
+    <div id="popup" class="popup" style="display:none;">
+        <span id="popup-text">Well done, 3 tasks completed</span>
+    </div>    
+
+    <div id="duplicate-popup" class="popup" style="display:none;">
+        <span id="duplicate-popup-text">This task already exists in the list.</span>
+    </div>
+    
+    
+</div>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>

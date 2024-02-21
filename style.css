@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1f1f1f, #1f1f1f);
+    padding: 10px;
+}
+
+.todo-app {
+    width: 90%; /* Adjusted for better responsiveness */
+    max-width: 740px;
+    background: #fff;
+    margin: 40px auto; /* Reduced margin on smaller screens */
+    padding: 20px; /* Adjusted padding */
+    border-radius: 10px;
+}
+
+.todo-app h2 {
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 2.2em; /* Increased for readability */
+}
+
+.todo-app h2 img {
+    width: 50px;
+    margin-left: 10px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 1em; /* Increased for readability */
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 12px 30px; /* Adjusted padding for smaller screens */
+    background: #ff5945;
+    color: #fff;
+    font-size: 1em; /* Increased for readability */
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+ul li {
+    list-style: none;
+    font-size: 1em; /* Increased for readability */
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    background-image: url(images/checked.png);
+}
+
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover {
+    background: #edeef0;
+}
+
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%); /* This centers the popup horizontally */
+    background-color: #f8d7da; /* Color of the popup */
+    color: #721c24; /* Text color inside the popup */
+    border: 1px solid #f5c6cb;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    z-index: 1000; /* Ensures the popup is above other content */
+    font-family: 'Poppins', sans-serif; /* Ensuring Roboto is applied */
+    /* font-size: 1.5rem; */
+    display: flex; /* Using flexbox to center contents */
+    justify-content: center; /* Centers horizontally inside the flex container */
+    align-items: center; /* Centers vertically inside the flex container */
+    width: auto; /* Or specify a width , if a fixed size is desired */
+    padding: 20px; /* Adjust the padding as needed */
+    box-sizing: border-box; /* Ensures padding is included in the width */
+    text-align: center; /* Center the text horizontally if not using flexbox */
+}
+
+/* Style for the positive (green) popup notification */
+.positive-popup {
+    background-color: #dff0d8;
+    color: #3c763d; 
+    border: 1px solid #d6e9c6; 
+}
+
+/* Media Queries for Tablet and Mobile Sizes  */
+
+@media (max-width: 768px) {
+.todo-app {
+    padding: 20px 15px;  
+    margin: 20px auto;  
+    }
+
+.todo-app h2 {
+    font-size: 1.1em; /* Adjust font size for tablet readability */
+    }
+
+button {
+    padding: 10px 20px; /* Smaller buttons for tablets */
+    font-size: 0.9em; 
+    }
+
+input {
+    font-size: 0.9em;
+    }
+
+ul li {
+    font-size: 0.9em; 
+    }
+}
+
+@media (max-width: 480px) {
+    .todo-app {
+    margin: 10px auto; 
+    padding: 15px 10px; 
+    }
+    .todo-app h2 {
+        font-size: 2em; 
+    }
+    
+    button {
+        padding: 8px 15px; 
+        font-size: 1em; 
+    }
+    
+    input {
+        font-size: 1em; 
+    }
+    
+    ul li {
+        font-size: 1em; 
+    }
+    .popup {
+        width: 60%;
+    }
+}
+
+
+
+/* Prevent zooming on mobile devices */
+html {
+touch-action: manipulation;
+}    
